@@ -20,7 +20,7 @@
 /* Bus controls */
 #if 1
 #include <avr/io.h>				/* Hardware specific include file */
-#define	IF_BUS		8			/* Bus width (4 or 8) */
+#define	IF_BUS		4			/* Bus width (4 or 8) */
 #define DELAY_US(n)	delay_us(n)	/* Delay d microseconds */
 #define	IF_INIT()				/* Initialize control port */
 #define	IF_DLY60()				/* Delay >=60ns (can be blanked for most uC) */
