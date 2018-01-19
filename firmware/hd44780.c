@@ -19,6 +19,19 @@
 
 /* Bus controls */
 #if 1
+unsigned char reverse_high4bits(unsigned char x)
+{
+    unsigned char h2, l2, r=0, t[4] = {0, 2, 1, 3};
+
+    h2 = (x >> 4) & 0x03;
+    h2 = t[h2];
+    l2 = (x >> 6) & 0x03;
+    l2 = t[l2];
+    r = (h2 << 6) | (l2 << 4);
+
+    return r;
+}
+
 #include <avr/io.h>             /* Hardware specific include file */
 #define IF_BUS      4           /* Bus width (4 or 8) */
 #define DELAY_US(n) delay_us(n) /* Delay d microseconds */
@@ -31,7 +44,7 @@
 #define E2_LOW()    PORTD&=0xFE /* Set E2 low (dual controller only) */
 #define RS_HIGH()   PORTD|=0x80 /* Set RS high */
 #define RS_LOW()    PORTD&=0x7F /* Set RS low */
-#define OUT_DATA(d) PORTD=d     /* Output a byte d on the bus (higher 4 bits of d in 4-bit mode) */
+#define OUT_DATA(d) PORTD=reverse_high4bits(d)     /* Output a byte d on the bus (higher 4 bits of d in 4-bit mode) */
 
 static
 void delay_us (unsigned int n)  /* An example of delay n microsecond routine (for Atmel AVR/8MHz) */
