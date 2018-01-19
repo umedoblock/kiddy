@@ -22,22 +22,22 @@
 #include <avr/io.h>             /* Hardware specific include file */
 #define IF_BUS      4           /* Bus width (4 or 8) */
 #define DELAY_US(n) delay_us(n) /* Delay d microseconds */
-#define IF_INIT()               /* Initialize control port */
+#define IF_INIT()  {PORTD &= 0x03; DDRD |= 0xFC;} /* Initialize control port */
 #define IF_DLY60()              /* Delay >=60ns (can be blanked for most uC) */
 #define IF_DLY450() {}          /* Delay >=450ns@3V, >=250ns@5V */
-#define E1_HIGH()   PORTB|=0x80 /* Set E/E1 high */
-#define E1_LOW()    PORTB&=0x7F /* Set E/E1 low */
-#define E2_HIGH()   PORTB|=0x01 /* Set E2 high (dual controller only) */
-#define E2_LOW()    PORTB&=0xFE /* Set E2 low (dual controller only) */
-#define RS_HIGH()   PORTB|=0x40 /* Set RS high */
-#define RS_LOW()    PORTB&=0xBF /* Set RS low */
+#define E1_HIGH()   PORTD|=0x40 /* Set E/E1 high */
+#define E1_LOW()    PORTD&=0xdF /* Set E/E1 low */
+#define E2_HIGH()   PORTD|=0x01 /* Set E2 high (dual controller only) */
+#define E2_LOW()    PORTD&=0xFE /* Set E2 low (dual controller only) */
+#define RS_HIGH()   PORTD|=0x80 /* Set RS high */
+#define RS_LOW()    PORTD&=0x7F /* Set RS low */
 #define OUT_DATA(d) PORTD=d     /* Output a byte d on the bus (higher 4 bits of d in 4-bit mode) */
 
 static
 void delay_us (unsigned int n)  /* An example of delay n microsecond routine (for Atmel AVR/8MHz) */
 {
     do {    /* 8 clocks per loop (Atmel AVR) */
-        PINB; PINB; PINB; PINB;
+        PIND; PIND; PIND; PIND;
     } while (--n);
 }
 
