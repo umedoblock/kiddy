@@ -10,7 +10,7 @@ unsigned char shuffle_8bits(unsigned char x)
         {2, 5, 7, 0, 6, 1, 4, 3}; DO IT YOURSELF
     */
 
-    unsigned char shuffle[8] = {2, 5, 7, 0, 6, 1, 4, 3};
+    unsigned char shuffle[8] = {7, 6, 5, 4, 3, 2, 1, 0};
     unsigned char r=0, bit;
     int i;
 
