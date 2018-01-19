@@ -21,13 +21,15 @@
 #if 1
 unsigned char reverse_high4bits(unsigned char x)
 {
-    unsigned char h2, l2, r=0, t[4] = {0, 2, 1, 3};
+    unsigned char h2, l2, backup=0, r=0, t[4] = {0, 2, 1, 3};
 
+    backup = x & 0xf;
     h2 = (x >> 4) & 0x03;
     h2 = t[h2];
     l2 = (x >> 6) & 0x03;
     l2 = t[l2];
     r = (h2 << 6) | (l2 << 4);
+    r |= backup;
 
     return r;
 }
