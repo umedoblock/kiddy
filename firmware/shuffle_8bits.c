@@ -51,8 +51,10 @@ int main(void)
     char ss_d[80], ss_r[80];
     int i;
 
+    /*
     for (i=0;i<SIZE;i++)
         d[i] = i << 4;
+    */
     for (i=0;i<SIZE;i++)
         r[i] = shuffle_8bits(d[i]);
 
