@@ -268,13 +268,13 @@ NoConn ~ 5350 2500
 NoConn ~ 5350 2400
 NoConn ~ 5350 2100
 NoConn ~ 5850 2100
-Text Label 5350 2300 2    60   ~ 0
-PD4
 Text Label 5850 2300 0    60   ~ 0
+PD4
+Text Label 5350 2300 2    60   ~ 0
 PD5
-Text Label 5350 2600 2    60   ~ 0
+Text Label 5850 2200 0    60   ~ 0
 PD6
-Text Label 5350 2700 2    60   ~ 0
+Text Label 5350 2200 2    60   ~ 0
 PD7
 Text Label 4900 4050 0    60   ~ 0
 PD4
@@ -331,9 +331,9 @@ Connection ~ 6300 2800
 Wire Wire Line
 	5950 2900 5950 2800
 Connection ~ 5950 2800
-Text Label 5850 2200 0    60   ~ 0
+Text Label 5350 2600 2    60   ~ 0
 PD3
-Text Label 5350 2200 2    60   ~ 0
+Text Label 5350 2700 2    60   ~ 0
 PD2
 Text Label 4900 3950 0    60   ~ 0
 PD3
