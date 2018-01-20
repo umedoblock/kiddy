@@ -29,6 +29,7 @@ pcb/omron/
 # make and avrdude
 *.srec
 *.lst
+*.bin
 
 # C language ignore files #####################################################
 # Prerequisites
