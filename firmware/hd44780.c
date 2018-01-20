@@ -47,7 +47,7 @@ unsigned char reverse_high4bits(unsigned char x)
 #define E1_LOW()    PORTD&=0xF7 /* Set E/E1 low */
 #define RS_HIGH()   PORTD|=0x04 /* Set RS high */
 #define RS_LOW()    PORTD&=0xFB /* Set RS low */
-#define OUT_DATA(d) PORTD=d     /* Output a byte d on the bus (higher 4 bits of d in 4-bit mode) */
+#define OUT_DATA(d) PORTD = (PORTD & 0x0F) | (d & 0xF0)     /* Output a byte d on the bus (higher 4 bits of d in 4-bit mode) */
 
 #ifdef _USE_DUAL_CONTROLLER
     #define E2_HIGH()   PORTD|=0x01 /* Set E2 high (dual controller only) */
