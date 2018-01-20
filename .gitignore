@@ -26,6 +26,10 @@ _autosave-*
 pcb/omron/
 *.stl
 
+# make and avrdude
+*.srec
+*.lst
+
 # C language ignore files #####################################################
 # Prerequisites
 *.d
