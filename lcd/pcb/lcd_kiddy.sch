@@ -109,8 +109,6 @@ F 3 "" H 6050 3250 50  0001 C CNN
 	1    6050 3250
 	0    1    -1   0   
 $EndComp
-Text Notes 5450 1550 0    60   ~ 0
-4bit\nmode
 $Comp
 L GND #PWR04
 U 1 1 5A4D034D
@@ -287,31 +285,37 @@ PD7
 NoConn ~ 4900 3650
 NoConn ~ 4900 3750
 Wire Wire Line
-	2650 2050 3000 2050
+	2650 2050 2700 2050
+Wire Wire Line
+	2700 2050 2900 2050
+Wire Wire Line
+	2900 2050 3000 2050
 Wire Wire Line
 	2900 2350 3000 2350
 Wire Wire Line
-	2900 4150 2900 4450
+	2900 4150 2900 4250
+Wire Wire Line
+	2900 4250 2900 4300
+Wire Wire Line
+	2900 4300 2900 4350
+Wire Wire Line
+	2900 4350 2900 4450
 Wire Wire Line
 	2900 4250 3000 4250
 Wire Wire Line
 	3000 4350 2900 4350
 Connection ~ 2900 4350
 Connection ~ 2900 4250
-Wire Notes Line
-	5400 1350 6650 1350
-Wire Notes Line
-	5400 1550 6650 1550
-Wire Notes Line
-	6650 1550 6650 1350
-Wire Notes Line
-	5400 1550 5400 1350
 Wire Wire Line
-	5850 2800 6300 2800
+	5850 2800 5950 2800
+Wire Wire Line
+	5950 2800 6300 2800
 Wire Wire Line
 	5250 2900 5250 2800
 Wire Wire Line
-	5150 2800 5350 2800
+	5150 2800 5250 2800
+Wire Wire Line
+	5250 2800 5350 2800
 Wire Wire Line
 	5850 2600 6300 2600
 Wire Wire Line
@@ -324,7 +328,9 @@ Wire Wire Line
 	5150 3250 5150 2800
 Connection ~ 5250 2800
 Wire Wire Line
-	6300 2600 6300 3250
+	6300 2600 6300 2800
+Wire Wire Line
+	6300 2800 6300 3250
 Wire Wire Line
 	6300 3250 6200 3250
 Connection ~ 6300 2800
@@ -365,7 +371,9 @@ Wire Wire Line
 	2550 1900 2700 1900
 Connection ~ 2700 1900
 Wire Wire Line
-	2700 1850 2700 2050
+	2700 1850 2700 1900
+Wire Wire Line
+	2700 1900 2700 2050
 Connection ~ 2700 2050
 Wire Wire Line
 	2900 2350 2900 2050
