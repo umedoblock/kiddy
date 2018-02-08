@@ -6,18 +6,17 @@
    only PB4 Input.
  */
 
-#define DO_INIT()	DDRB  |= 0x00	/* Initialize port for MMC DO as input */
-#define DO			(PINB &	0x10)	/* Test for MMC DO ('H':true, 'L':false) */
+#define DO_INIT() DDRB  |= 0x00  /* Initialize port for MMC DO as input */
+#define DO        (PINB &  0x10) /* Test for MMC DO ('H':true, 'L':false) */
 
-#define DI_INIT()	DDRB  |= 0x08	/* Initialize port for MMC DI as output */
-#define DI_H()		PORTB |= 0x08	/* Set MMC DI "high" */
-#define DI_L()		PORTB &= 0xF7	/* Set MMC DI "low" */
+#define DI_INIT() DDRB  |= 0x08  /* Initialize port for MMC DI as output */
+#define DI_H()    PORTB |= 0x08  /* Set MMC DI "high" */
+#define DI_L()    PORTB &= 0xF7  /* Set MMC DI "low" */
 
-#define CK_INIT()	DDRB  |= 0x20	/* Initialize port for MMC SCLK as output */
-#define CK_H()		PORTB |= 0x20	/* Set MMC SCLK "high" */
-#define CK_L()		PORTB &= 0xDF	/* Set MMC SCLK "low" */
+#define CK_INIT() DDRB  |= 0x20  /* Initialize port for MMC SCLK as output */
+#define CK_H()    PORTB |= 0x20  /* Set MMC SCLK "high" */
+#define CK_L()    PORTB &= 0xDF  /* Set MMC SCLK "low" */
 
-#define CS_INIT()	DDRB  |= 0x04	/* Initialize port for MMC CS as output */
-#define	CS_H()		PORTB |= 0x04	/* Set MMC CS "high" */
-#define CS_L()		PORTB &= 0xFB	/* Set MMC CS "low" */
-
+#define CS_INIT() DDRB  |= 0x04  /* Initialize port for MMC CS as output */
+#define    CS_H() PORTB |= 0x04  /* Set MMC CS "high" */
+#define CS_L()    PORTB &= 0xFB  /* Set MMC CS "low" */
