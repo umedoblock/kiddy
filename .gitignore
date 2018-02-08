@@ -30,6 +30,7 @@ pcb/omron/
 *.srec
 *.lst
 *.bin
+*/firmware/obj
 
 # C language ignore files #####################################################
 # Prerequisites
@@ -87,3 +88,6 @@ dkms.conf
 
 # ctags output
 tags
+
+# vim temporary file
+*.swp
