@@ -1,2 +1,2 @@
-# lcd-kiddy
-playing various display with lcd
+# kiddy
+some simple proects with kicad
