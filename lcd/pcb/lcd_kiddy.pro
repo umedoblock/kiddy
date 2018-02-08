@@ -1,4 +1,4 @@
-update=Wed 03 Jan 2018 11:50:08 PM JST
+update=Fri 09 Feb 2018 12:27:09 AM JST
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,7 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=../../../KiCad/kicad-library/library
+LibDir=../../lib/kiddy.pretty
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -58,3 +58,4 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
+LibName30=/home/umedoblock/kicad/kiddy/lib/kiddy

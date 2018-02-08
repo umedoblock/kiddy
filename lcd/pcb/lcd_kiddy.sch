@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:kiddy
 LIBS:lcd_kiddy-cache
 EELAYER 25 0
 EELAYER END
@@ -53,17 +54,6 @@ F 2 "Package_DIP:DIP-28_W7.62mm" H 3900 3150 50  0001 C CIN
 F 3 "" H 3900 3150 50  0001 C CNN
 	1    3900 3150
 	1    0    0    -1  
-$EndComp
-$Comp
-L LCD16X2 DS1
-U 1 1 5A4CDDF4
-P 7950 2300
-F 0 "DS1" H 7150 2700 50  0000 C CNN
-F 1 "LCD16X2" H 8650 2700 50  0000 C CNN
-F 2 "Display:WC1602A" H 7950 2250 50  0001 C CIN
-F 3 "" H 7950 2300 50  0001 C CNN
-	1    7950 2300
-	0    1    -1   0   
 $EndComp
 $Comp
 L +5V #PWR01
@@ -131,12 +121,12 @@ NoConn ~ 3000 2650
 $Comp
 L PWR_FLAG #FLG05
 U 1 1 5A4D106D
-P 7100 2950
-F 0 "#FLG05" H 7100 3025 50  0001 C CNN
-F 1 "PWR_FLAG" V 7200 3000 50  0000 C CNN
-F 2 "" H 7100 2950 50  0001 C CNN
-F 3 "" H 7100 2950 50  0001 C CNN
-	1    7100 2950
+P 6250 1800
+F 0 "#FLG05" H 6250 1875 50  0001 C CNN
+F 1 "PWR_FLAG" V 6200 1600 50  0000 C CNN
+F 2 "" H 6250 1800 50  0001 C CNN
+F 3 "" H 6250 1800 50  0001 C CNN
+	1    6250 1800
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -164,13 +154,13 @@ $EndComp
 $Comp
 L PWR_FLAG #FLG08
 U 1 1 5A4D1753
-P 7100 3050
-F 0 "#FLG08" H 7100 3125 50  0001 C CNN
-F 1 "PWR_FLAG" V 7000 3100 50  0000 C CNN
-F 2 "" H 7100 3050 50  0001 C CNN
-F 3 "" H 7100 3050 50  0001 C CNN
-	1    7100 3050
-	0    -1   -1   0   
+P 8050 1800
+F 0 "#FLG08" H 8050 1875 50  0001 C CNN
+F 1 "PWR_FLAG" V 8100 1650 50  0000 C CNN
+F 2 "" H 8050 1800 50  0001 C CNN
+F 3 "" H 8050 1800 50  0001 C CNN
+	1    8050 1800
+	0    1    1    0   
 $EndComp
 $Comp
 L CONN_02X08 J1
@@ -186,79 +176,79 @@ $EndComp
 $Comp
 L CONN_02X08 J2
 U 1 1 5A4D0322
-P 6750 2100
-F 0 "J2" H 6750 2550 50  0000 C CNN
-F 1 "CONN_02X08" V 6750 2100 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical" H 6750 900 50  0001 C CNN
-F 3 "" H 6750 900 50  0001 C CNN
-	1    6750 2100
+P 7100 2450
+F 0 "J2" H 7100 2900 50  0000 C CNN
+F 1 "CONN_02X08" V 7100 2450 50  0000 C CNN
+F 2 "kiddy:PinHeader_2x08_P2.54mm_Vertical_R" H 7100 1250 50  0001 C CNN
+F 3 "" H 7100 1250 50  0001 C CNN
+	1    7100 2450
 	1    0    0    1   
 $EndComp
 NoConn ~ 4900 2650
 NoConn ~ 4900 2750
-Text Label 6500 2450 2    60   ~ 0
+Text Label 6850 2800 2    60   ~ 0
 VSS
-Text Label 6500 2350 2    60   ~ 0
+Text Label 6850 2700 2    60   ~ 0
 VEE
-Text Label 6500 2250 2    60   ~ 0
+Text Label 6850 2600 2    60   ~ 0
 R/W
-Text Label 6500 2150 2    60   ~ 0
+Text Label 6850 2500 2    60   ~ 0
 D0
-Text Label 6500 2050 2    60   ~ 0
+Text Label 6850 2400 2    60   ~ 0
 D2
-Text Label 6500 1950 2    60   ~ 0
+Text Label 6850 2300 2    60   ~ 0
 D4
-Text Label 6500 1850 2    60   ~ 0
+Text Label 6850 2200 2    60   ~ 0
 D6
-Text Label 6500 1750 2    60   ~ 0
+Text Label 6850 2100 2    60   ~ 0
 LED+
-Text Label 7450 1650 2    60   ~ 0
+Text Label 7700 1100 0    60   ~ 0
 LED+
-Text Label 7450 1850 2    60   ~ 0
+Text Label 7700 1200 0    60   ~ 0
 D6
-Text Label 7450 2050 2    60   ~ 0
+Text Label 7700 1300 0    60   ~ 0
 D4
-Text Label 7450 2250 2    60   ~ 0
+Text Label 7700 1400 0    60   ~ 0
 D2
-Text Label 7450 2450 2    60   ~ 0
+Text Label 7700 1500 0    60   ~ 0
 D0
-Text Label 7450 2650 2    60   ~ 0
+Text Label 7700 1600 0    60   ~ 0
 R/W
-Text Label 7450 2850 2    60   ~ 0
+Text Label 7700 1700 0    60   ~ 0
 VEE
-Text Label 7450 3050 2    60   ~ 0
+Text Label 7700 1800 0    60   ~ 0
 VSS
-Text Label 7000 2450 0    60   ~ 0
+Text Label 7350 2800 0    60   ~ 0
 VDD
-Text Label 7450 2950 2    60   ~ 0
+Text Label 6500 1800 2    60   ~ 0
 VDD
-Text Label 7450 1550 2    60   ~ 0
+Text Label 6500 1100 2    60   ~ 0
 LED-
-Text Label 7450 1750 2    60   ~ 0
+Text Label 6500 1200 2    60   ~ 0
 D7
-Text Label 7450 1950 2    60   ~ 0
+Text Label 6500 1300 2    60   ~ 0
 D5
-Text Label 7450 2150 2    60   ~ 0
+Text Label 6500 1400 2    60   ~ 0
 D3
-Text Label 7450 2350 2    60   ~ 0
+Text Label 6500 1500 2    60   ~ 0
 D1
-Text Label 7450 2550 2    60   ~ 0
+Text Label 6500 1600 2    60   ~ 0
 E
-Text Label 7450 2750 2    60   ~ 0
+Text Label 6500 1700 2    60   ~ 0
 RS
-Text Label 7000 2350 0    60   ~ 0
+Text Label 7350 2700 0    60   ~ 0
 RS
-Text Label 7000 2250 0    60   ~ 0
+Text Label 7350 2600 0    60   ~ 0
 E
-Text Label 7000 2150 0    60   ~ 0
+Text Label 7350 2500 0    60   ~ 0
 D1
-Text Label 7000 2050 0    60   ~ 0
+Text Label 7350 2400 0    60   ~ 0
 D3
-Text Label 7000 1950 0    60   ~ 0
+Text Label 7350 2300 0    60   ~ 0
 D5
-Text Label 7000 1850 0    60   ~ 0
+Text Label 7350 2200 0    60   ~ 0
 D7
-Text Label 7000 1750 0    60   ~ 0
+Text Label 7350 2100 0    60   ~ 0
 LED-
 NoConn ~ 5850 2500
 NoConn ~ 5850 2400
@@ -285,21 +275,11 @@ PD7
 NoConn ~ 4900 3650
 NoConn ~ 4900 3750
 Wire Wire Line
-	2650 2050 2700 2050
-Wire Wire Line
-	2700 2050 2900 2050
-Wire Wire Line
-	2900 2050 3000 2050
+	2650 2050 3000 2050
 Wire Wire Line
 	2900 2350 3000 2350
 Wire Wire Line
-	2900 4150 2900 4250
-Wire Wire Line
-	2900 4250 2900 4300
-Wire Wire Line
-	2900 4300 2900 4350
-Wire Wire Line
-	2900 4350 2900 4450
+	2900 4150 2900 4450
 Wire Wire Line
 	2900 4250 3000 4250
 Wire Wire Line
@@ -307,15 +287,11 @@ Wire Wire Line
 Connection ~ 2900 4350
 Connection ~ 2900 4250
 Wire Wire Line
-	5850 2800 5950 2800
-Wire Wire Line
-	5950 2800 6300 2800
+	5850 2800 6300 2800
 Wire Wire Line
 	5250 2900 5250 2800
 Wire Wire Line
-	5150 2800 5250 2800
-Wire Wire Line
-	5250 2800 5350 2800
+	5150 2800 5350 2800
 Wire Wire Line
 	5850 2600 6300 2600
 Wire Wire Line
@@ -328,9 +304,7 @@ Wire Wire Line
 	5150 3250 5150 2800
 Connection ~ 5250 2800
 Wire Wire Line
-	6300 2600 6300 2800
-Wire Wire Line
-	6300 2800 6300 3250
+	6300 2600 6300 3250
 Wire Wire Line
 	6300 3250 6200 3250
 Connection ~ 6300 2800
@@ -352,9 +326,9 @@ NoConn ~ 4900 2350
 NoConn ~ 4900 2450
 NoConn ~ 4900 2550
 Wire Wire Line
-	7100 2950 7450 2950
+	6250 1800 6500 1800
 Wire Wire Line
-	7100 3050 7450 3050
+	8050 1800 7700 1800
 $Comp
 L BARREL_JACK J3
 U 1 1 5A52198A
@@ -371,9 +345,7 @@ Wire Wire Line
 	2550 1900 2700 1900
 Connection ~ 2700 1900
 Wire Wire Line
-	2700 1850 2700 1900
-Wire Wire Line
-	2700 1900 2700 2050
+	2700 1850 2700 2050
 Connection ~ 2700 2050
 Wire Wire Line
 	2900 2350 2900 2050
@@ -383,4 +355,15 @@ Wire Wire Line
 Wire Wire Line
 	2650 4300 2900 4300
 Connection ~ 2900 4300
+$Comp
+L LCD8X2 DS1
+U 1 1 5A7C6C6D
+P 7100 1450
+F 0 "DS1" H 6750 1950 50  0000 C CNN
+F 1 "LCD8X2" H 7400 1950 50  0000 C CNN
+F 2 "kiddy:LCD-2x8-AK" H 6400 1800 50  0001 C CIN
+F 3 "" H 6600 1850 50  0001 C CNN
+	1    7100 1450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
