@@ -7,7 +7,8 @@ ASRC    =
 VPATH   =
 
 ### Target device
-DEVICE  = atmega186p
+DEVICE  = atmega168a
+DEVICE  = atmega328p
 
 ### Optimization level (0, 1, 2, 3, 4 or s)
 OPTIMIZE = s
@@ -99,6 +100,10 @@ sym: $(PROJECT).sym
 # Display compiler version information.
 version :
 	@$(CC) --version
+# Write hex file to DEVICE
+write:
+	avrdude -c avrispmkII -p m328p -P usb -U flash:w:./$(PROJECT).hex -F -vv
+#	avrdude -c avrispmkII -p m168 -P usb -U flash:w:./$(PROJECT).hex -F -vv
 
 # Create final output file from ELF output file.
 %.hex: %.elf
