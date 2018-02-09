@@ -1,2 +1,2 @@
 # kiddy
-some simple proects with kicad
+some simple device projects designed with KiCad.
