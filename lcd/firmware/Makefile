@@ -1,5 +1,6 @@
 TARGET         = lcd_kiddy
 OBJ            = lcd_kiddy.o hd44780.o
+MCU_TARGET     = atmega88
 MCU_TARGET     = atmega168a
 OPTIMIZE       = -O2
 
@@ -27,9 +28,15 @@ clean:
 	rm -rf *.o $(TARGET).elf *.eps *.png *.pdf *.bak
 	rm -rf *.lst *.map $(EXTRA_CLEAN_FILES)
 
+# m164p    = ATmega164P         [/etc/avrdude.conf:4295]
+# m168     = ATmega168          [/etc/avrdude.conf:8091]
+# m168p    = ATmega168P         [/etc/avrdude.conf:8280]
+# m168pb   = ATmega168PB        [/etc/avrdude.conf:8292]
+
 write:
 	avrdude -c avrispmkII -p m168p -P usb -U flash:w:./$(TARGET).hex -F -vv
 #	avrdude -c avrispmkII -p m168p -P /dev/ttyUSB0 -b 2400 -U flash:w:./${TARGET).hex -F -vv
+#	avrdude -c avrispmkII -p m88 -P usb -U flash:w:./$(TARGET).hex -F -vv
 
 lst:  $(TARGET).lst
 
