@@ -44,6 +44,20 @@ int insert_log(char *log, int len)
     return index;
 }
 
+int describe_value(char *describe, int8_t value)
+{
+    char ss[_LCD_COLS+1];
+    int8_t len, index;
+
+    /* pay attention to "describe" in snprintf().
+     * "describe" may occur security hole.
+     */
+    len=snprintf(ss, _LCD_COLS+1, describe, value);
+    index=insert_log(ss, len);
+
+    return index;
+}
+
 int insert_kv(char *key, int8_t value)
 {
     char ss[_LCD_COLS+1];
@@ -78,12 +92,13 @@ int view_log(void)
 int main (void)
 {
     init_device();
+    int8_t value = 0x4a;
 
     insert_log("lcd test start !", -1);
     insert_kv("lcd test", 2);
     insert_kv("lcd test", 3);
     insert_kv("lcd test", 4);
-    insert_kv("lcd test", 5);
+    describe_value("74,0x4a=0x%02x", value);
     view_log();
 
     return 0;
