@@ -67,17 +67,6 @@ F 3 "" H 2700 1850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
-U 1 1 5A4CE0DF
-P 5950 2900
-F 0 "#PWR02" H 5950 2650 50  0001 C CNN
-F 1 "GND" H 5950 2750 50  0000 C CNN
-F 2 "" H 5950 2900 50  0001 C CNN
-F 3 "" H 5950 2900 50  0001 C CNN
-	1    5950 2900
-	1    0    0    -1  
-$EndComp
-$Comp
 L +5V #PWR03
 U 1 1 5A4CE22B
 P 5250 2900
@@ -291,26 +280,16 @@ Wire Wire Line
 Wire Wire Line
 	5250 2900 5250 2800
 Wire Wire Line
-	5150 2800 5350 2800
-Wire Wire Line
 	5850 2600 6300 2600
 Wire Wire Line
 	5850 2700 6050 2700
 Wire Wire Line
 	6050 2700 6050 3100
 Wire Wire Line
-	5900 3250 5150 3250
-Wire Wire Line
-	5150 3250 5150 2800
-Connection ~ 5250 2800
-Wire Wire Line
-	6300 2600 6300 3250
+	6300 2600 6300 3350
 Wire Wire Line
 	6300 3250 6200 3250
 Connection ~ 6300 2800
-Wire Wire Line
-	5950 2900 5950 2800
-Connection ~ 5950 2800
 Text Label 5350 2600 2    60   ~ 0
 PD3
 Text Label 5350 2700 2    60   ~ 0
@@ -366,4 +345,25 @@ F 3 "" H 6600 1850 50  0001 C CNN
 	1    7100 1450
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5250 2800 5350 2800
+Wire Wire Line
+	5900 3250 5800 3250
+Wire Wire Line
+	5800 3250 5800 3000
+Wire Wire Line
+	5800 3000 6050 3000
+Connection ~ 6050 3000
+$Comp
+L GND #PWR?
+U 1 1 5A7DB056
+P 6300 3350
+F 0 "#PWR?" H 6300 3100 50  0001 C CNN
+F 1 "GND" H 6300 3200 50  0000 C CNN
+F 2 "" H 6300 3350 50  0001 C CNN
+F 3 "" H 6300 3350 50  0001 C CNN
+	1    6300 3350
+	1    0    0    -1  
+$EndComp
+Connection ~ 6300 3250
 $EndSCHEMATC
