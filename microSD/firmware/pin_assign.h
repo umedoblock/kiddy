@@ -4,6 +4,12 @@
  * PB5: SCK,  0x20 <=> 0xdf
    MISOのみInput、他はOutputで定義。
    only PB4 Input.
+
+        Master  Slave
+   MISO       <-
+   MOSI       ->
+   SCLK       ->
+     CS       ->
  */
 
 #define DO_PIN (0x10)
