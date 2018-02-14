@@ -34,11 +34,9 @@ int main (void)
 
 	mode=FA_WRITE | FA_CREATE_ALWAYS;
 	res=f_open(&Fil, "newfile2.txt", mode);
-	/*
-	res=f_printf(&Fil, "%s\n", get_signature());
-	*/
 
 	if (res == FR_OK) {	/* Create a file */
+		f_printf(&Fil, "%s\n", get_signature());
 		res=f_write(&Fil, "It works2!\r\n", 12, &bw);
 		/* Write data to the file */
 
