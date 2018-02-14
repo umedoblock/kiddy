@@ -3,7 +3,11 @@
 /*----------------------------------------------------------------------*/
 
 #include <avr/io.h>	/* Device specific declarations */
+#include <util/delay.h>
+
 #include "ff.h"		/* Declarations of FatFs API */
+
+#include "kiddy.h"
 
 FATFS FatFs;		/* FatFs work area needed for each volume */
 FIL Fil;			/* File object needed for each open file */
@@ -15,7 +19,7 @@ int init_device(void)
 
 int main (void)
 {
-	UINT bw;
+	UINT count, bw;
 	FRESULT res;
 	BYTE mode;
 
@@ -29,11 +33,20 @@ int main (void)
 	}
 
 	mode=FA_WRITE | FA_CREATE_ALWAYS;
-	res=f_open(&Fil, "newfile.txt", mode);
+	res=f_open(&Fil, "newfile2.txt", mode);
+	/*
+	res=f_printf(&Fil, "%s\n", get_signature());
+	*/
 
 	if (res == FR_OK) {	/* Create a file */
-		res=f_write(&Fil, "It works!\r\n", 11, &bw);	/* Write data to the file */
-		res=f_close(&Fil);								/* Close the file */
+		res=f_write(&Fil, "It works2!\r\n", 12, &bw);
+		/* Write data to the file */
+
+		for(count=0;count<10;count++) {
+			res=f_printf(&Fil, "count=%u\n", count);
+			_delay_ms(10);
+		}
+		res=f_close(&Fil);/* Close the file */
 	}
 
 	for (;;) ;

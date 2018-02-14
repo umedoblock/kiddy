@@ -2,7 +2,7 @@
 PROJECT	= avrfp
 
 ### Source files and search directory
-CSRC    = main.c ff.c sdmm.c
+CSRC    = main.c ff.c sdmm.c kiddy.c
 ASRC    =
 VPATH   =
 
