@@ -5,7 +5,8 @@
 #ifdef _USE_CHAN_SPI
 #define SIGNATURE "This SPI communication is emurated by ChaN."
 #elif _USE_AVR_SPI
-#define SIGNATURE "This SPI communication is made by AVR."
+#error "Not yet ready to develop."
+// #define SIGNATURE "This SPI communication is made by AVR."
 #else
 #error "no man knows how to communicate with SPI."
 #endif
