@@ -1,0 +1,20 @@
+# Copyright (C) 2018, 梅濁酒(umedoblock), all right reserved.
+
+.PHONY: all
+
+CFLAGS := -D_USE_CHAN_SPI
+# Please use below command if you want to be available _USE_AVR_SPI macro.
+# $ make -f Makefile.kiddy CFLAGS=-D_USE_AVR_SPI
+
+all: run
+
+kiddy_main: kiddy_main.o kiddy.o
+	gcc -o kiddy_main kiddy_main.o kiddy.o
+kiddy_main.o: kiddy_main.c kiddy.h
+	gcc -c kiddy_main.c
+kiddy.o: kiddy.c kiddy.h
+	gcc $(CFLAGS) -c kiddy.c
+run: kiddy_main
+	./kiddy_main
+clean:
+	rm -f *.o kiddy_main
