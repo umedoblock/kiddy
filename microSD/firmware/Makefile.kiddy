@@ -2,9 +2,14 @@
 
 .PHONY: all
 
-CFLAGS := -D_USE_CHAN_SPI
+# Flags for SPI lib(ChaN or AVR)
+# default is ChaN lib.
 # Please use below command if you want to be available _USE_AVR_SPI macro.
-# $ make -f Makefile.kiddy CFLAGS=-D_USE_AVR_SPI
+# $ make -f Makefile.kiddy SPI_LIB=_USE_AVR_SPI
+ifeq ($(SPI_LIB),)
+SPI_LIB = _USE_CHAN_SPI
+endif
+CFLAGS += -D$(SPI_LIB)
 
 all: run
 

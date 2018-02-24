@@ -61,6 +61,15 @@ CFLAGS += $(addprefix -I,$(INCDIRS))
 CFLAGS += $(addprefix -D,$(DEFS))
 CFLAGS += -Wp,-MM,-MP,-MT,$(OBJDIR)/$(*F).o,-MF,$(OBJDIR)/$(*F).d
 
+# Flags for SPI lib(ChaN or AVR)
+# default is ChaN lib.
+# Please use below command if you want to be available _USE_AVR_SPI macro.
+# $ make SPI_LIB=_USE_AVR_SPI
+ifeq ($(SPI_LIB),)
+SPI_LIB = _USE_CHAN_SPI
+endif
+CFLAGS += -D$(SPI_LIB)
+
 
 # Assembler flags
 ASFLAGS += $(addprefix -D,$(ADEFS)) -Wa,-gstabs,-g$(DEBUG)
